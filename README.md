@@ -1,7 +1,8 @@
 # SQL-Art Gallery System Database Example
 ### Buğra ATEŞ 20.12.2019 
 
-### Database Visualization
+##
+## Database Visualization
 ##
 ![databasegraph](https://user-images.githubusercontent.com/49213911/105477272-afe6ba80-5cb2-11eb-92cd-ccb252b372c8.png)
 ##
