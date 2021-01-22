@@ -2,9 +2,9 @@
 ### Buğra ATEŞ 20.12.2019 
 
 ### Database Visualization
-
-![databasegraph](https://user-images.githubusercontent.com/49213911/105476000-21be0480-5cb1-11eb-95ed-4a4bd04089a3.png)
-
+##
+![databasegraph](https://user-images.githubusercontent.com/49213911/105477272-afe6ba80-5cb2-11eb-92cd-ccb252b372c8.png)
+##
 
 ### DEPENDENCIES
 #### CustomerAuction
