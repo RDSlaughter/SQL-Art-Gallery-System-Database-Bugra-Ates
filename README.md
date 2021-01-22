@@ -1,2 +1,2 @@
-# SQL-Art Gallery System Database Bugra Ates
- Art Gallery System Database Example
+# SQL-Art Gallery System Database Example
+### Buğra ATEŞ 20.12.2019 
