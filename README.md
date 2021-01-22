@@ -59,40 +59,58 @@ Query example answers included in .sql file.
 
 /* 1 */
 SELECT * FROM Customer WHERE Customer.CustomerAge < 30 ORDER BY Customer.CustomerAge DESC
+
 /* 2 */
 SELECT * FROM Products WHERE (ProductType = 'Statue') AND ( ProductAge > 200 AND ProductAge < 600 ) AND (ProductPrice > 30000000 AND ProductPrice < 100000000)
+
 /* 3 */
 SELECT OrderID,OrderType,OrderCost,Orders.CustomerID,Artist.ArtistID FROM Orders INNER JOIN Products ON (Orders.OrderType = 'Statue') AND (Orders.CustomerID = 'FRE47') AND (Orders.ProductID = Products.ProductID) INNER JOIN Artist ON Artist.ArtistID = Products.ArtistID
+
 /* 4 */
 SELECT * FROM SecuritySrv WHERE SecuritySrv.SecurityGuardRank = 'Officer' 
+
 /* 5 */
 SELECT Artist.ArtistID,Products.ProductName,Products.ProductType FROM Products,Artist WHERE Products.ProductType = 'Statue' AND Products.ArtistID = Artist.ArtistID AND Products.ProductAge > 120
+
 /* 6 */
 SELECT * FROM Guide WHERE Guide.GuideGender = 'Male' AND Guide.GuideProfession = 'Painting'
+
 /* 7 */
 SELECT * FROM Zones WHERE Zones.RoomSize = 'Medium' AND Zones.RoomSecurityLevel > 3
+
 /* 8 */
 SELECT * FROM Management WHERE (ManagerDuty = 'Guide') AND ( ManagerName = 'Ahmet') AND ( ManagerRank = 'HOG')
+
 /* 9 */
 SELECT Artist.ArtistName,Artist.ArtistStyle,Products.ProductName FROM Artist INNER JOIN Products ON Products.ArtistID = Artist.ArtistID AND Artist.ArtistStyle = 'Painter'
+
 /* 10 */
 SELECT * FROM Exhibition WHERE Exhibition.ExhibitionContent = 'Painting' AND Exhibition.ExhibitionStartDate = '10.12.2019'
+
 /* 11 */
 SELECT * FROM Auction WHERE Auction.AuctionDate = '04.02.2020' AND Auction.ProductID IN (SELECT Products.ProductID FROM Products WHERE Products.ProductType = 'Painting')
+
 /* 12 */
 SELECT Orders.OrderType,AVG(Orders.OrderCost) FROM Orders GROUP BY Orders.OrderType ORDER BY AVG(Orders.OrderCost DESC/* GROUP BY */
+
 /* 13 */
 SELECT Customer.CustomerID,Customer.CustomerName,Customer.CustomerLastName,CustomerNation,OrderID,OrderCost,Orders.OrderType FROM Customer,Orders WHERE Customer.CustomerID IN ( SELECT Orders.CustomerID FROM Orders WHERE Orders.CustomerID = Customer.CustomerID AND Customer.CustomerNation = 'Turkey' AND Orders.OrderCost > 10000000)
+
 /* 14 */
 SELECT Artist.ArtistName,Products.ProductName,ProductPrice FROM Artist INNER JOIN Products ON Products.ArtistID = Artist.ArtistID ORDER BY Products.ProductPrice DESC
+
 /* 15 */
 SELECT TOP 3 * FROM Products WHERE ProductType = 'Statue' ORDER BY ProductPrice DESC 
+
 /* 16 */
 SELECT OrderID,OrderType,OrderCost,Orders.CustomerID,Artist.ArtistName,Artist.ArtistNation FROM Orders INNER JOIN Products ON Orders.ProductID = Products.ProductID INNER JOIN Artist ON Artist.ArtistID = Products.ArtistID
+
 /* 17 */
 SELECT ProductID,ProductName,ProductPrice FROM Products WHERE Products.ProductID IN (SELECT Auction.ProductID FROM Auction WHERE AuctionDate = '04.02.2020') 
+
 /* 18 */
 SELECT ArtistID,ArtistName,ArtistStyle FROM Artist WHERE Artist.ArtistID IN(SELECT Products.ArtistID FROM Products WHERE ProductName = 'Mona Lisa')
+
 /* 19 */
 SELECT Products.ProductType , AVG(Products.ProductPrice) FROM Products WHERE ProductType = 'Painting' OR ProductType = 'Statue' GROUP BY ProductType /* GROUP BY */
 
